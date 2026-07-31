@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osama Sheriff — MEP Engineer | HVAC & Firefighting Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0A1F3A;
+    --bg-sheet: #0E2A4C;
+    --bg-sheet-2: #0C2544;
+    --line: rgba(230,238,247,0.14);
+    --line-strong: rgba(230,238,247,0.28);
+    --ink: #E9EFF6;
+    --ink-dim: #9AB0CB;
+    --ink-dimmer: #6E85A3;
+    --orange: #FF6B35;
+    --orange-dim: rgba(255,107,53,0.35);
+    --cyan: #5FD9CB;
+    --cyan-dim: rgba(95,217,203,0.35);
+    --amber: #F2C14E;
+  }
+
+  /* diazo-print light theme: pale drafting paper, ink-blue lines */
+  html[data-theme="light"]{
+    --bg: #EDE7D9;
+    --bg-sheet: #F4EFE3;
+    --bg-sheet-2: #EFE9DA;
+    --line: rgba(20,40,70,0.14);
+    --line-strong: rgba(20,40,70,0.32);
+    --ink: #16233A;
+    --ink-dim: #3E5675;
+    --ink-dimmer: #6A7E9B;
+    --orange: #D9491F;
+    --orange-dim: rgba(217,73,31,0.18);
+    --cyan: #0E7C6E;
+    --cyan-dim: rgba(14,124,110,0.18);
+    --amber: #A9741B;
+  }
+  html[data-theme="light"] .chat-fab,
+  html[data-theme="light"] .chat-input-row button{ color: #F4EFE3; }
+  html[data-theme="light"] .disc-tag{ color: #F4EFE3; }
+  html[data-theme="light"] .reg-tl svg path, html[data-theme="light"] .reg-tr svg path,
+  html[data-theme="light"] .reg-bl svg path, html[data-theme="light"] .reg-br svg path{ stroke:#9AA9C2; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      repeating-linear-gradient(0deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 32px),
+      repeating-linear-gradient(90deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 32px),
+      var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .sheet, .disc-card, .tb-cell, .title-block, nav.topbar, .chat-panel{
+    transition: background-color .25s ease, border-color .25s ease;
+  }
+  .display{ font-family:'Space Grotesk', sans-serif; letter-spacing:0.01em; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  a{ color: var(--cyan); }
+
+  /* ---------- SHEET FRAME ---------- */
+  .sheet{
+    position: relative;
+    max-width: 1100px;
+    margin: 28px auto;
+    border: 1.5px solid var(--line-strong);
+    background: var(--bg-sheet);
+    padding: 0;
+  }
+  .sheet::before, .sheet::after,
+  .reg-tl, .reg-tr, .reg-bl, .reg-br { pointer-events:none; }
+  .reg-tl, .reg-tr, .reg-bl, .reg-br{
+    position:absolute; width:22px; height:22px; z-index:3;
+  }
+  .reg-tl{ top:-11px; left:-11px; }
+  .reg-tr{ top:-11px; right:-11px; }
+  .reg-bl{ bottom:-11px; left:-11px; }
+  .reg-br{ bottom:-11px; right:-11px; }
+  .reg-tl svg, .reg-tr svg, .reg-bl svg, .reg-br svg{ width:100%; height:100%; }
+
+  .sheet-index-tag{
+    position:absolute;
+    top: -1px; left: 24px;
+    background: var(--bg-sheet);
+    border: 1.5px solid var(--line-strong);
+    border-top: none;
+    padding: 4px 14px 5px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--orange);
+    z-index: 2;
+  }
+  .sheet-inner{ padding: 64px 48px 40px; }
+  @media (max-width: 720px){
+    .sheet{ margin: 18px 12px; }
+    .sheet-inner{ padding: 48px 20px 28px; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav.topbar{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(10,31,58,0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: 1100px; margin: 0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 20px;
+  }
+  .nav-mark{ display:flex; align-items:center; gap:10px; font-size:14px; color:var(--ink-dim); }
+  .nav-mark b{ color: var(--ink); font-weight:600; }
+  .nav-links{ display:flex; gap: 22px; font-size: 13px; }
+  .nav-links a{ color: var(--ink-dim); text-decoration:none; letter-spacing:0.04em; }
+  .nav-links a:hover{ color: var(--orange); }
+
+  html[dir="rtl"] body{ font-family: 'Cairo', 'IBM Plex Sans', sans-serif; }
+  html[dir="rtl"] .cover-summary,
+  html[dir="rtl"] .disc-items,
+  html[dir="rtl"] ul.tasks li,
+  html[dir="rtl"] .proj-desc,
+  html[dir="rtl"] .chat-msg{ font-family: 'Cairo', 'IBM Plex Sans', sans-serif; }
+  html[dir="rtl"] ul.tasks li::before{ left:auto; right:0; }
+  html[dir="rtl"] ul.tasks li{ padding-left:0; padding-right:20px; }
+  html[dir="rtl"] .proj{ border-left:none; border-right:2px solid var(--orange); padding-left:0; padding-right:20px; }
+
+  .util-btn{
+    display:flex; align-items:center; justify-content:center;
+    height: 30px; padding: 0 10px;
+    background: transparent; border: 1px solid var(--line-strong);
+    color: var(--ink-dim); cursor:pointer;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing:0.06em;
+    gap:6px;
+  }
+  .util-btn:hover{ border-color: var(--orange); color: var(--orange); }
+  .util-btn svg{ width:14px; height:14px; }
+  .cv-download{
+    display:flex; align-items:center; gap:6px;
+    background: var(--orange); border:1px solid var(--orange); color:#0A1F3A;
+    text-decoration:none;
+  }
+  .cv-download:hover{ opacity:0.9; }
+  @media (max-width:720px){ .util-btn span.util-label{ display:none; } .util-btn{ padding:0 8px; } }
+  .nav-right{ display:flex; align-items:center; gap: 16px; }
+  .visit-badge{
+    display:flex; align-items:center; gap:7px;
+    font-size: 11px; letter-spacing: 0.08em; color: var(--ink-dim);
+    white-space: nowrap;
+  }
+  .visit-badge .visit-dot{
+    width:6px; height:6px; border-radius:50%;
+    background: var(--cyan); box-shadow: 0 0 6px var(--cyan);
+  }
+  .visit-badge #visit-count{ color: var(--orange); font-weight:600; }
+
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:30px; height:24px; background:none; border:none; cursor:pointer; padding:0;
+  }
+  .nav-toggle span{ display:block; width:100%; height:1.5px; background: var(--ink); }
+
+  .nav-mobile{
+    display:none; flex-direction:column;
+    border-top: 1px solid var(--line);
+    background: var(--bg-sheet);
+  }
+  .nav-mobile a{
+    padding: 14px 20px; color: var(--ink-dim); text-decoration:none;
+    font-size: 13px; border-bottom: 1px solid var(--line);
+  }
+  .nav-mobile a:hover{ color: var(--orange); }
+  .nav-mobile.open{ display:flex; }
+
+  @media (max-width:720px){
+    .nav-links{ display:none; }
+    .nav-toggle{ display:flex; }
+    .visit-badge span:not(#visit-count){ display:none; }
+  }
+
+  /* ---------- COVER / HERO ---------- */
+  .cover .sheet-inner{ padding-top: 56px; }
+  .cover-eyebrow{
+    display:flex; align-items:center; gap:12px;
+    color: var(--ink-dimmer); font-size: 12px; letter-spacing: 0.18em;
+    margin-bottom: 26px;
+  }
+  .cover-eyebrow .rule{ flex:1; height:1px; background: var(--line-strong); }
+
+  h1.title{
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-weight: 700;
+    line-height: 0.98;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  h1.title .accent{ color: var(--orange); }
+  .subtitle{
+    margin-top: 18px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--cyan);
+    font-weight: 500;
+    display:flex; flex-wrap:wrap; gap: 10px 18px;
+  }
+  .subtitle .dot{ color: var(--ink-dimmer); }
+
+  .cover-summary{
+    max-width: 62ch;
+    margin-top: 26px;
+    color: var(--ink-dim);
+    font-size: 1rem;
+  }
+
+  /* index of sheets — table of contents */
+  .index-list{
+    margin-top: 46px;
+    border-top: 1px solid var(--line-strong);
+  }
+  .index-row{
+    display:grid;
+    grid-template-columns: 74px 1fr auto;
+    gap: 18px;
+    align-items:center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration:none;
+    color: var(--ink);
+  }
+  .index-row:hover .idx-title{ color: var(--orange); }
+  .index-row .idx-num{
+    font-size: 12px; color: var(--ink-dimmer); letter-spacing: 0.06em;
+  }
+  .index-row .idx-title{
+    font-size: 1rem; font-weight:500; transition: color .15s ease;
+  }
+  .index-row .idx-desc{
+    font-size: 12.5px; color: var(--ink-dimmer);
+    display:none;
+  }
+  @media (min-width: 620px){
+    .index-row{ grid-template-columns: 74px 220px 1fr; }
+    .index-row .idx-desc{ display:block; }
+  }
+
+  /* ---------- TITLE BLOCK (signature element) ---------- */
+  .title-block{
+    margin-top: 48px;
+    border: 1.5px solid var(--line-strong);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tb-cell{
+    padding: 12px 16px;
+    border-right: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .tb-cell:nth-child(4n){ border-right:none; }
+  .tb-label{ font-size:10px; letter-spacing:0.14em; color: var(--ink-dimmer); margin-bottom:6px; }
+  .tb-value{ font-size: 13.5px; color: var(--ink); }
+  .tb-value a{ color: var(--ink); text-decoration:none; border-bottom: 1px dashed var(--line-strong); }
+  .tb-value a:hover{ color: var(--orange); border-color: var(--orange); }
+  .tb-cell.wide{ grid-column: span 2; }
+  @media (max-width: 620px){
+    .title-block{ grid-template-columns: repeat(2,1fr); }
+    .tb-cell:nth-child(4n){ border-right: 1px solid var(--line-strong); }
+    .tb-cell:nth-child(2n){ border-right:none; }
+    .tb-cell.wide{ grid-column: span 2; }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sheet-head{
+    display:flex; align-items:baseline; gap: 16px;
+    margin-bottom: 34px;
+    flex-wrap: wrap;
+  }
+  .sheet-head .sheet-code{
+    font-size: 13px; color: var(--orange); letter-spacing: 0.1em;
+  }
+  .sheet-head h2{
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .sheet-head .sheet-sub{
+    color: var(--ink-dimmer); font-size: 13px; margin-left:auto;
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .job{ margin-bottom: 40px; }
+  .job:last-child{ margin-bottom: 0; }
+  .job-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap: wrap; gap: 8px 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .job-role{ font-size: 1.15rem; font-weight: 600; }
+  .job-org{ color: var(--cyan); font-weight: 500; }
+  .job-date{ font-size: 12.5px; color: var(--ink-dimmer); letter-spacing: 0.04em; }
+
+  .job-group{ margin-bottom: 18px; }
+  .job-group:last-child{ margin-bottom: 0; }
+  .job-group-label{
+    font-size: 11.5px; letter-spacing: 0.1em; color: var(--amber);
+    margin-bottom: 8px;
+  }
+  ul.tasks{ list-style:none; }
+  ul.tasks li{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--ink-dim);
+    font-size: 14.5px;
+  }
+  ul.tasks li::before{
+    content: "";
+    position: absolute; left: 0; top: 8px;
+    width: 7px; height: 1.5px;
+    background: var(--orange);
+  }
+
+  /* ---------- DISCIPLINE GRID (skills) ---------- */
+  .disc-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+  }
+  .disc-card{
+    background: var(--bg-sheet);
+    padding: 22px;
+  }
+  .disc-tag{
+    display:inline-block;
+    font-size: 11px; letter-spacing:0.08em;
+    color: var(--bg);
+    background: var(--cyan);
+    padding: 2px 8px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .disc-card.fp .disc-tag{ background: var(--orange); }
+  .disc-card.el .disc-tag{ background: var(--amber); }
+  .disc-card.au .disc-tag{ background: #B69CFF; }
+  .disc-card.so .disc-tag{ background: var(--ink-dim); }
+  .disc-name{ font-weight:600; margin-bottom: 10px; font-size: 1rem; }
+  .disc-items{ color: var(--ink-dim); font-size: 13.5px; line-height:1.7; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj{
+    border-left: 2px solid var(--orange);
+    padding: 4px 0 4px 20px;
+    margin-bottom: 26px;
+  }
+  .proj:last-child{ margin-bottom: 0; }
+  .proj-title{ font-weight:600; font-size: 1.02rem; margin-bottom:6px; }
+  .proj-desc{ color: var(--ink-dim); font-size: 14.5px; }
+
+  /* revision cloud highlight */
+  .cloud-wrap{ position:relative; display:inline-block; margin: 30px 0 10px; }
+  .cloud-wrap svg{ position:absolute; top:-16px; left:-22px; right:-22px; bottom:-14px; width:calc(100% + 44px); height:calc(100% + 30px); }
+  .cloud-stat{ position:relative; z-index:1; padding: 6px 10px; }
+  .cloud-num{ font-size: 2.1rem; font-weight:700; color: var(--orange); }
+  .cloud-label{ font-size: 12px; color: var(--ink-dim); letter-spacing:0.05em; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-note{
+    font-size: 12.5px; color: var(--ink-dimmer);
+    margin-bottom: 28px; max-width: 60ch;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+  }
+  .gallery-card{ background: var(--bg-sheet); padding: 20px; }
+  .gallery-card svg{ width:100%; height:auto; display:block; margin-bottom: 14px; }
+  .gallery-cap{ font-weight:600; font-size: 0.95rem; margin-bottom: 4px; }
+  .gallery-tag{ font-size: 11px; color: var(--ink-dimmer); letter-spacing: 0.05em; }
+
+  /* ---------- EDU / TRAINING ---------- */
+  .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 720px){ .two-col{ grid-template-columns: 1fr; } }
+  .edu-item{ margin-bottom: 20px; }
+  .edu-item:last-child{ margin-bottom:0; }
+  .edu-degree{ font-weight:600; font-size: 15px; }
+  .edu-meta{ color: var(--ink-dimmer); font-size: 12.5px; margin-top:2px; }
+
+  .lang-row{ display:flex; justify-content:space-between; padding: 8px 0; border-bottom:1px solid var(--line); font-size: 14px;}
+  .lang-row span:last-child{ color: var(--cyan); }
+
+  /* ---------- FOOTER TITLE BLOCK ---------- */
+  footer.sheet .sheet-inner{ padding-bottom: 56px; }
+  .footer-cta{ text-align:center; margin-bottom: 44px; }
+  .footer-cta h2{
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    text-transform: uppercase; font-weight:700;
+  }
+  .footer-cta p{ color: var(--ink-dim); margin-top: 12px; }
+  .footer-links{
+    display:flex; justify-content:center; gap: 26px; margin-top: 22px; flex-wrap:wrap;
+    font-size: 14px;
+  }
+  .footer-links a{ color: var(--ink); text-decoration:none; border-bottom: 1px solid var(--line-strong); padding-bottom:2px; }
+  .footer-links a:hover{ color: var(--orange); border-color: var(--orange); }
+  .rev-note{
+    margin-top: 40px; text-align:center; font-size:11px; color: var(--ink-dimmer); letter-spacing: 0.06em;
+  }
+
+  ::selection{ background: var(--orange); color: var(--bg); }
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.is-visible{ opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- QUICK CONTACT CHAT WIDGET ---------- */
+  .chat-fab{
+    position: fixed; bottom: 22px; right: 22px; z-index: 100;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--orange); border: 1.5px solid var(--bg);
+    cursor: pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+  }
+  .chat-fab svg{ width: 24px; height: 24px; }
+  .chat-fab .icon-close{ display:none; }
+  .chat-fab.open .icon-chat{ display:none; }
+  .chat-fab.open .icon-close{ display:block; }
+
+  .chat-panel{
+    position: fixed; bottom: 90px; right: 22px; z-index: 100;
+    width: 320px; max-width: calc(100vw - 32px);
+    max-height: min(460px, 70vh);
+    background: var(--bg-sheet);
+    border: 1.5px solid var(--line-strong);
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    opacity: 0; transform: translateY(12px) scale(0.98);
+    pointer-events:none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .chat-panel.open{ opacity:1; transform:none; pointer-events:auto; }
+
+  .chat-head{
+    padding: 13px 16px; border-bottom: 1px solid var(--line-strong);
+    display:flex; align-items:center; gap:10px; flex-shrink:0;
+  }
+  .chat-head .dot{ width:8px; height:8px; border-radius:50%; background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+  .chat-head-title{ font-size:13px; font-weight:600; }
+  .chat-head-sub{ font-size:10.5px; color: var(--ink-dimmer); margin-top:1px; }
+
+  .chat-body{
+    flex:1; overflow-y:auto; padding: 14px 16px;
+    display:flex; flex-direction:column; gap:10px; font-size:13px;
+  }
+  .chat-msg{ max-width:88%; padding:8px 12px; line-height:1.5; }
+  .chat-msg.bot{ background: rgba(95,217,203,0.08); border:1px solid var(--line); align-self:flex-start; color: var(--ink); }
+  .chat-msg.user{ background: var(--orange-dim); align-self:flex-end; color: var(--ink); border:1px solid var(--orange); }
+
+  .chat-quick{ display:flex; flex-wrap:wrap; gap:8px; padding: 0 16px 12px; flex-shrink:0; }
+  .chat-chip{
+    font-size: 11px; letter-spacing: 0.02em;
+    padding: 6px 10px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink-dim);
+    cursor:pointer; font-family: 'IBM Plex Mono', monospace;
+  }
+  .chat-chip:hover{ border-color: var(--orange); color: var(--orange); }
+
+  .chat-input-row{ display:flex; border-top: 1px solid var(--line-strong); flex-shrink:0; }
+  .chat-input-row input{
+    flex:1; background: transparent; border:none; padding: 12px 14px;
+    color: var(--ink); font-size: 13px; font-family: 'IBM Plex Sans', sans-serif; min-width:0;
+  }
+  .chat-input-row input:focus{ outline:none; }
+  .chat-input-row button{
+    background: var(--orange); border:none; color: var(--bg);
+    padding: 0 16px; cursor:pointer; font-weight:600; font-size:11.5px;
+    font-family: 'IBM Plex Mono', monospace; letter-spacing:0.04em;
+  }
+
+  @media (max-width: 480px){
+    .chat-panel{ width: calc(100vw - 24px); right: 12px; bottom: 82px; }
+    .chat-fab{ right: 16px; bottom: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="nav-inner">
+    <div class="nav-mark mono"><b>OSAMA SHERIFF</b> — DWG SET / G-00</div>
+    <div class="nav-right">
+      <div class="visit-badge mono" title="Page views"><span class="visit-dot"></span><span>VISITORS</span> <span id="visit-count">···</span></div>
+      <div class="nav-links mono">
+        <a href="#hvac" data-en="M-01 HVAC" data-ar="M-01 تكييف">M-01 HVAC</a>
+        <a href="#firefighting" data-en="FP-01 FIRE" data-ar="FP-01 حريق">FP-01 FIRE</a>
+        <a href="#electrical" data-en="E-01 ELEC" data-ar="E-01 كهرباء">E-01 ELEC</a>
+        <a href="#automation" data-en="A-01 AUTO" data-ar="A-01 أوتوميشن">A-01 AUTO</a>
+        <a href="#gallery" data-en="V-01 GALLERY" data-ar="V-01 معرض">V-01 GALLERY</a>
+        <a href="#contact" data-en="G-99 CONTACT" data-ar="G-99 تواصل">G-99 CONTACT</a>
+      </div>
+      <a class="util-btn cv-download" href="Osama-Sheriff-CV.pdf" download title="Download CV (PDF)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+        <span class="util-label" data-en="CV" data-ar="السيرة الذاتية">CV</span>
+      </a>
+      <button class="util-btn" id="themeToggle" title="Toggle light/dark">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <button class="util-btn mono" id="langToggle" title="عربي / English">EN / AR</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile mono" id="navMobile">
+    <a href="#hvac" data-en="M-01 — HVAC &amp; Ventilation" data-ar="M-01 — التكييف والتهوية">M-01 — HVAC &amp; Ventilation</a>
+    <a href="#firefighting" data-en="FP-01 — Firefighting" data-ar="FP-01 — أنظمة الحريق">FP-01 — Firefighting</a>
+    <a href="#electrical" data-en="E-01 — Electrical &amp; First-Fix" data-ar="E-01 — الكهرباء والتأسيس">E-01 — Electrical &amp; First-Fix</a>
+    <a href="#automation" data-en="A-01 — Automation &amp; Control" data-ar="A-01 — الأوتوميشن والتحكم">A-01 — Automation &amp; Control</a>
+    <a href="#gallery" data-en="V-01 — Gallery" data-ar="V-01 — معرض الأعمال">V-01 — Gallery</a>
+    <a href="#experience" data-en="X-01 — Experience" data-ar="X-01 — الخبرات">X-01 — Experience</a>
+    <a href="#education" data-en="G-02 — Education" data-ar="G-02 — التعليم">G-02 — Education</a>
+    <a href="#contact" data-en="G-99 — Contact" data-ar="G-99 — تواصل">G-99 — Contact</a>
+  </div>
+</nav>
+
+<!-- COVER SHEET -->
+<section class="sheet cover">
+  <div class="sheet-index-tag mono">G-00 / COVER</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-bl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-br"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+
+  <div class="sheet-inner">
+    <div class="cover-eyebrow mono"><span data-en="MEP DRAWING SET — ISSUED FOR VIEWING" data-ar="مجموعة رسومات MEP — للعرض">MEP DRAWING SET — ISSUED FOR VIEWING</span><span class="rule"></span><span data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span></div>
+
+    <h1 class="title display" id="heroName">Osama <span class="accent">Sheriff</span></h1>
+    <div class="subtitle">
+      <span data-en="MEP Engineer" data-ar="مهندس MEP">MEP Engineer</span><span class="dot">·</span>
+      <span data-en="HVAC &amp; Ventilation" data-ar="تكييف وتهوية">HVAC &amp; Ventilation</span><span class="dot">·</span>
+      <span data-en="Firefighting Systems" data-ar="أنظمة الحريق">Firefighting Systems</span><span class="dot">·</span>
+      <span data-en="Automation &amp; PLC/SCADA" data-ar="أوتوميشن وPLC/SCADA">Automation &amp; PLC/SCADA</span>
+    </div>
+
+    <p class="cover-summary" data-en="MEP engineer working across HVAC, ventilation and firefighting systems, from procurement and BOQ preparation through site execution and handover. Full-scope experience on VRV/VRF, DX AHU, CRAC and package units, smoke control, and FM200 suppression, paired with a background in PLC/SCADA automation." data-ar="مهندس MEP بيشتغل على أنظمة التكييف والتهوية والحريق، من المشتريات وإعداد الـ BOQ لحد التنفيذ في الموقع والتسليم. خبرة كاملة في VRV/VRF وDX AHU وCRAC ووحدات الـ Package، والتحكم في الدخان، وإطفاء FM200، بالإضافة لخلفية في أتمتة PLC/SCADA.">
+      MEP engineer working across HVAC, ventilation and firefighting systems, from procurement and BOQ preparation through site execution and handover. Full-scope experience on VRV/VRF, DX AHU, CRAC and package units, smoke control, and FM200 suppression, paired with a background in PLC/SCADA automation.
+    </p>
+
+    <div class="index-list mono">
+      <a class="index-row" href="#hvac">
+        <span class="idx-num">M-01</span>
+        <span class="idx-title" data-en="HVAC &amp; Ventilation" data-ar="التكييف والتهوية">HVAC &amp; Ventilation</span>
+        <span class="idx-desc" data-en="VRV/VRF · CRAC · DX AHU · smoke control" data-ar="VRV/VRF · CRAC · DX AHU · التحكم بالدخان">VRV/VRF · CRAC · DX AHU · smoke control</span>
+      </a>
+      <a class="index-row" href="#firefighting">
+        <span class="idx-num">FP-01</span>
+        <span class="idx-title" data-en="Firefighting Systems" data-ar="أنظمة الحريق">Firefighting Systems</span>
+        <span class="idx-desc" data-en="FM200 · manual &amp; automatic · commissioning" data-ar="FM200 · يدوي وأوتوماتيك · تشغيل">FM200 · manual &amp; automatic · commissioning</span>
+      </a>
+      <a class="index-row" href="#electrical">
+        <span class="idx-num">E-01</span>
+        <span class="idx-title" data-en="Electrical &amp; First-Fix" data-ar="الكهرباء والتأسيس">Electrical &amp; First-Fix</span>
+        <span class="idx-desc" data-en="Power cabling · BMS · trays &amp; conduits" data-ar="كابلات الطاقة · BMS · تراي وكوندويت">Power cabling · BMS · trays &amp; conduits</span>
+      </a>
+      <a class="index-row" href="#automation">
+        <span class="idx-num">A-01</span>
+        <span class="idx-title" data-en="Automation &amp; Control" data-ar="الأوتوميشن والتحكم">Automation &amp; Control</span>
+        <span class="idx-desc" data-en="PLC · SCADA · WinCC · TIA Portal" data-ar="PLC · SCADA · WinCC · TIA Portal">PLC · SCADA · WinCC · TIA Portal</span>
+      </a>
+      <a class="index-row" href="#gallery">
+        <span class="idx-num">V-01</span>
+        <span class="idx-title" data-en="Gallery" data-ar="معرض الأعمال">Gallery</span>
+        <span class="idx-desc" data-en="System illustrations by discipline" data-ar="رسومات توضيحية لكل تخصص">System illustrations by discipline</span>
+      </a>
+      <a class="index-row" href="#experience">
+        <span class="idx-num">X-01</span>
+        <span class="idx-title" data-en="Experience &amp; Projects" data-ar="الخبرات والمشاريع">Experience &amp; Projects</span>
+        <span class="idx-desc" data-en="Arab Contractors · SIAC" data-ar="المقاولون العرب · SIAC">Arab Contractors · SIAC</span>
+      </a>
+      <a class="index-row" href="#education">
+        <span class="idx-num">G-02</span>
+        <span class="idx-title" data-en="Education &amp; Training" data-ar="التعليم والتدريب">Education &amp; Training</span>
+        <span class="idx-desc" data-en="Mansoura University · internships" data-ar="جامعة المنصورة · تدريبات">Mansoura University · internships</span>
+      </a>
+    </div>
+
+    <div class="title-block mono">
+      <div class="tb-cell">
+        <div class="tb-label" data-en="LOCATION" data-ar="الموقع">LOCATION</div>
+        <div class="tb-value">6th October, Giza, Egypt</div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label" data-en="PHONE" data-ar="التليفون">PHONE</div>
+        <div class="tb-value">+20 155 443 6752</div>
+      </div>
+      <div class="tb-cell wide">
+        <div class="tb-label" data-en="EMAIL" data-ar="الإيميل">EMAIL</div>
+        <div class="tb-value"><a href="mailto:osama.a.a.sheriff@gmail.com">osama.a.a.sheriff@gmail.com</a></div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label">LINKEDIN</div>
+        <div class="tb-value"><a href="https://linkedin.com/in/0s17" target="_blank" rel="noopener">/in/0s17</a></div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label" data-en="LANGUAGES" data-ar="اللغات">LANGUAGES</div>
+        <div class="tb-value" data-en="Arabic (Native) · English" data-ar="العربية (لغة أم) · الإنجليزية">Arabic (Native) · English</div>
+      </div>
+      <div class="tb-cell wide">
+        <div class="tb-label" data-en="CURRENT ROLE" data-ar="الوظيفة الحالية">CURRENT ROLE</div>
+        <div class="tb-value" data-en="Electromechanical Engineer — Arab Contractors" data-ar="مهندس كهروميكانيكا — المقاولون العرب">Electromechanical Engineer — Arab Contractors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- M-01 HVAC -->
+<section class="sheet" id="hvac">
+  <div class="sheet-index-tag mono">M-01 / MECHANICAL</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">M-01</span>
+      <h2 class="display" data-en="HVAC &amp; Ventilation" data-ar="التكييف والتهوية">HVAC &amp; Ventilation</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-card">
+        <span class="disc-tag mono" data-en="SYSTEMS" data-ar="أنظمة">SYSTEMS</span>
+        <div class="disc-name" data-en="Equipment" data-ar="المعدات">Equipment</div>
+        <div class="disc-items" data-en="VRV/VRF · DX AHU · CRAC · Package Units" data-ar="VRV/VRF · DX AHU · CRAC · وحدات Package">VRV/VRF · DX AHU · CRAC · Package Units</div>
+      </div>
+      <div class="disc-card">
+        <span class="disc-tag mono" data-en="AIR" data-ar="هواء">AIR</span>
+        <div class="disc-name" data-en="Ventilation" data-ar="التهوية">Ventilation</div>
+        <div class="disc-items" data-en="Exhaust &amp; fresh air systems · smoke control · pressurization fans" data-ar="أنظمة الشفط والهواء النقي · التحكم بالدخان · مراوح الضغط">Exhaust &amp; fresh air systems · smoke control · pressurization fans</div>
+      </div>
+      <div class="disc-card">
+        <span class="disc-tag mono" data-en="SCOPE" data-ar="النطاق">SCOPE</span>
+        <div class="disc-name" data-en="Execution" data-ar="التنفيذ">Execution</div>
+        <div class="disc-items" data-en="Ductwork &amp; sheet metal · copper pipework · site supervision · BOQ preparation" data-ar="الدكت والصاج · مواسير النحاس · إشراف الموقع · إعداد الـ BOQ">Ductwork &amp; sheet metal · copper pipework · site supervision · BOQ preparation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FP-01 FIREFIGHTING -->
+<section class="sheet" id="firefighting">
+  <div class="sheet-index-tag mono">FP-01 / FIRE PROTECTION</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">FP-01</span>
+      <h2 class="display" data-en="Firefighting Systems" data-ar="أنظمة الحريق">Firefighting Systems</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-card fp">
+        <span class="disc-tag mono" data-en="SUPPRESSION" data-ar="إطفاء">SUPPRESSION</span>
+        <div class="disc-name" data-en="Clean Agent" data-ar="غاز نظيف">Clean Agent</div>
+        <div class="disc-items" data-en="FM200 fire suppression — supervised installation and handover at Stations 1, 3, 4, 6 &amp; 9" data-ar="إطفاء FM200 — إشراف على التركيب والتسليم في المحطات 1 و3 و4 و6 و9">FM200 fire suppression — supervised installation and handover at Stations 1, 3, 4, 6 &amp; 9</div>
+      </div>
+      <div class="disc-card fp">
+        <span class="disc-tag mono" data-en="CONTROL" data-ar="تحكم">CONTROL</span>
+        <div class="disc-name" data-en="Systems" data-ar="الأنظمة">Systems</div>
+        <div class="disc-items" data-en="Manual &amp; automatic firefighting systems — installation and commissioning" data-ar="أنظمة حريق يدوية وأوتوماتيك — تركيب وتشغيل">Manual &amp; automatic firefighting systems — installation and commissioning</div>
+      </div>
+      <div class="disc-card fp">
+        <span class="disc-tag mono" data-en="HANDOVER" data-ar="تسليم">HANDOVER</span>
+        <div class="disc-name" data-en="Documentation" data-ar="التوثيق">Documentation</div>
+        <div class="disc-items" data-en="System commissioning &amp; handover documentation" data-ar="توثيق تشغيل وتسليم الأنظمة">System commissioning &amp; handover documentation</div>
+      </div>
+    </div>
+
+    <div class="cloud-wrap">
+      <svg viewBox="0 0 240 90" preserveAspectRatio="none">
+        <path d="M 12 45 a 14 14 0 0 1 8-20 a 16 16 0 0 1 26-10 a 18 18 0 0 1 30-6 a 18 18 0 0 1 34 2 a 16 16 0 0 1 30 6 a 15 15 0 0 1 26 12 a 14 14 0 0 1 6 22 a 14 14 0 0 1 -8 18 a 16 16 0 0 1 -26 10 a 18 18 0 0 1 -30 6 a 18 18 0 0 1 -34-2 a 16 16 0 0 1 -30-6 a 15 15 0 0 1 -32-12 a 14 14 0 0 1 -0-22 Z" fill="none" stroke="var(--orange-dim)" stroke-width="2"/>
+      </svg>
+      <div class="cloud-stat">
+        <div class="cloud-num display">5</div>
+        <div class="cloud-label mono" data-en="MONORAIL STATIONS — FM200 HANDOVER" data-ar="محطات مونوريل — تسليم FM200">MONORAIL STATIONS — FM200 HANDOVER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- E-01 ELECTRICAL -->
+<section class="sheet" id="electrical">
+  <div class="sheet-index-tag mono">E-01 / ELECTRICAL</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">E-01</span>
+      <h2 class="display" data-en="Electrical &amp; First-Fix" data-ar="الكهرباء والتأسيس">Electrical &amp; First-Fix</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-card el">
+        <span class="disc-tag mono" data-en="CABLING" data-ar="كابلات">CABLING</span>
+        <div class="disc-name" data-en="First-Fix Power" data-ar="تأسيس الطاقة">First-Fix Power</div>
+        <div class="disc-items" data-en="Power cabling for HVAC, ventilation and firefighting systems" data-ar="كابلات الطاقة لأنظمة التكييف والتهوية والحريق">Power cabling for HVAC, ventilation and firefighting systems</div>
+      </div>
+      <div class="disc-card el">
+        <span class="disc-tag mono">BMS</span>
+        <div class="disc-name" data-en="Building Management" data-ar="إدارة المبنى">Building Management</div>
+        <div class="disc-items" data-en="BMS first-fix cabling supervision across stations" data-ar="إشراف على تأسيس كابلات BMS في المحطات">BMS first-fix cabling supervision across stations</div>
+      </div>
+      <div class="disc-card el">
+        <span class="disc-tag mono" data-en="CONTAINMENT" data-ar="مسارات">CONTAINMENT</span>
+        <div class="disc-name" data-en="Infrastructure" data-ar="البنية التحتية">Infrastructure</div>
+        <div class="disc-items" data-en="Steel conduits · cable trays · trunking · flexible conduits" data-ar="كوندويت صلب · تراي كابلات · ترانكينج · كوندويت مرن">Steel conduits · cable trays · trunking · flexible conduits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A-01 AUTOMATION -->
+<section class="sheet" id="automation">
+  <div class="sheet-index-tag mono">A-01 / AUTOMATION</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">A-01</span>
+      <h2 class="display" data-en="Automation &amp; Control" data-ar="الأوتوميشن والتحكم">Automation &amp; Control</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-card au">
+        <span class="disc-tag mono" data-en="HARDWARE" data-ar="هاردوير">HARDWARE</span>
+        <div class="disc-name" data-en="PLC Platforms" data-ar="منصات PLC">PLC Platforms</div>
+        <div class="disc-items">Siemens · Mitsubishi · LS</div>
+      </div>
+      <div class="disc-card au">
+        <span class="disc-tag mono" data-en="SOFTWARE" data-ar="سوفتوير">SOFTWARE</span>
+        <div class="disc-name">SCADA / HMI</div>
+        <div class="disc-items" data-en="SCADA · WinCC · TIA Portal · Ladder Logic · PID control" data-ar="SCADA · WinCC · TIA Portal · Ladder Logic · تحكم PID">SCADA · WinCC · TIA Portal · Ladder Logic · PID control</div>
+      </div>
+      <div class="disc-card au">
+        <span class="disc-tag mono" data-en="FIELD" data-ar="ميداني">FIELD</span>
+        <div class="disc-name" data-en="Instrumentation" data-ar="أجهزة القياس">Instrumentation</div>
+        <div class="disc-items" data-en="Sensor calibration &amp; integration for pump and water systems" data-ar="معايرة وتكامل الحساسات لأنظمة الطلمبات والمياه">Sensor calibration &amp; integration for pump and water systems</div>
+      </div>
+      <div class="disc-card so">
+        <span class="disc-tag mono" data-en="TOOLS" data-ar="أدوات">TOOLS</span>
+        <div class="disc-name" data-en="Software" data-ar="البرامج">Software</div>
+        <div class="disc-items">AutoCAD (MEP &amp; Electrical) · SolidWorks · MATLAB · Python · Factory I/O · LogixPro · CADE SIMU</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V-01 GALLERY -->
+<section class="sheet" id="gallery">
+  <div class="sheet-index-tag mono">V-01 / VISUAL INDEX</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">V-01</span>
+      <h2 class="display" data-en="Gallery" data-ar="معرض الأعمال">Gallery</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+    <p class="gallery-note" data-en="Schematic system illustrations by discipline — drafted for this portfolio, not literal job-site photos." data-ar="رسومات تخطيطية توضيحية لكل تخصص — رُسمت خصيصًا للبورتفوليو، مش صور حقيقية من الموقع.">
+      Schematic system illustrations by discipline — drafted for this portfolio, not literal job-site photos.
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <svg viewBox="0 0 300 180">
+          <rect x="10" y="10" width="280" height="160" fill="none" stroke="var(--line-strong)"/>
+          <rect x="30" y="90" width="70" height="60" fill="none" stroke="var(--cyan)" stroke-width="1.5"/>
+          <circle cx="65" cy="120" r="18" fill="none" stroke="var(--cyan)" stroke-width="1.5"/>
+          <circle cx="65" cy="120" r="4" fill="var(--cyan)"/>
+          <path d="M100 100 H160" stroke="var(--ink-dim)" stroke-width="1.5" fill="none"/>
+          <rect x="160" y="70" width="90" height="50" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+          <path d="M180 70 V50 H240 V70" stroke="var(--ink-dim)" stroke-width="1.5" fill="none"/>
+          <path d="M190 50 V30 M230 50 V30" stroke="var(--ink-dim)" stroke-width="1.5"/>
+          <path d="M180 30 h20 M220 30 h20" stroke="var(--ink-dim)" stroke-width="1.5"/>
+        </svg>
+        <div class="gallery-cap" data-en="VRV Outdoor Unit &amp; Duct Run" data-ar="وحدة VRV الخارجية ومسار الدكت">VRV Outdoor Unit &amp; Duct Run</div>
+        <div class="gallery-tag mono" data-en="M-01 · HVAC" data-ar="M-01 · تكييف">M-01 · HVAC</div>
+      </div>
+
+      <div class="gallery-card">
+        <svg viewBox="0 0 300 180">
+          <rect x="10" y="10" width="280" height="160" fill="none" stroke="var(--line-strong)"/>
+          <rect x="35" y="70" width="18" height="70" rx="6" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
+          <rect x="60" y="70" width="18" height="70" rx="6" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
+          <rect x="85" y="70" width="18" height="70" rx="6" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
+          <path d="M44 70 V50 M69 70 V50 M94 70 V50" stroke="var(--orange)" stroke-width="1.5"/>
+          <path d="M44 50 H94" stroke="var(--orange)" stroke-width="1.5"/>
+          <path d="M94 50 H180" stroke="var(--ink-dim)" stroke-width="1.5"/>
+          <path d="M180 50 V100 H230" stroke="var(--ink-dim)" stroke-width="1.5" fill="none"/>
+          <path d="M230 100 l14 -8 M230 100 l14 8 M244 92 v16" stroke="var(--amber)" stroke-width="1.5"/>
+        </svg>
+        <div class="gallery-cap" data-en="FM200 Cylinder Bank &amp; Nozzle Line" data-ar="بنك أسطوانات FM200 وخط النوزل">FM200 Cylinder Bank &amp; Nozzle Line</div>
+        <div class="gallery-tag mono" data-en="FP-01 · Firefighting" data-ar="FP-01 · حريق">FP-01 · Firefighting</div>
+      </div>
+
+      <div class="gallery-card">
+        <svg viewBox="0 0 300 180">
+          <rect x="10" y="10" width="280" height="160" fill="none" stroke="var(--line-strong)"/>
+          <rect x="200" y="40" width="70" height="100" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+          <path d="M210 55 h50 M210 70 h50 M210 85 h50 M210 100 h50" stroke="var(--ink-dim)" stroke-width="1"/>
+          <path d="M30 130 H190 M30 140 H190" stroke="var(--ink-dim)" stroke-width="1.5"/>
+          <path d="M40 130 V140 M60 130 V140 M80 130 V140 M100 130 V140 M120 130 V140 M140 130 V140 M160 130 V140 M180 130 V140" stroke="var(--ink-dim)" stroke-width="1"/>
+          <path d="M50 130 V60 H200" stroke="var(--cyan)" stroke-width="1.5" fill="none"/>
+        </svg>
+        <div class="gallery-cap" data-en="Cable Tray, Conduit Riser &amp; Panel" data-ar="تراي الكابلات وريزر الكوندويت واللوحة">Cable Tray, Conduit Riser &amp; Panel</div>
+        <div class="gallery-tag mono" data-en="E-01 · Electrical" data-ar="E-01 · كهرباء">E-01 · Electrical</div>
+      </div>
+
+      <div class="gallery-card">
+        <svg viewBox="0 0 300 180">
+          <rect x="10" y="10" width="280" height="160" fill="none" stroke="var(--line-strong)"/>
+          <rect x="30" y="60" width="90" height="80" fill="none" stroke="var(--cyan)" stroke-width="1.5"/>
+          <path d="M40 75 h70 M40 90 h70 M40 105 h70 M40 120 h70" stroke="var(--ink-dim)" stroke-width="1"/>
+          <circle cx="45" cy="68" r="2" fill="var(--amber)"/>
+          <circle cx="55" cy="68" r="2" fill="var(--cyan)"/>
+          <path d="M120 100 H170" stroke="var(--ink-dim)" stroke-width="1.5"/>
+          <rect x="170" y="55" width="90" height="60" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+          <path d="M180 65 h70 M180 80 L210 95 L230 70 L250 90" stroke="var(--cyan)" stroke-width="1.5" fill="none"/>
+          <rect x="205" y="115" width="20" height="10" fill="none" stroke="var(--ink-dim)" stroke-width="1"/>
+        </svg>
+        <div class="gallery-cap" data-en="PLC Rack &amp; SCADA Monitor" data-ar="رف PLC وشاشة SCADA">PLC Rack &amp; SCADA Monitor</div>
+        <div class="gallery-tag mono" data-en="A-01 · Automation" data-ar="A-01 · أوتوميشن">A-01 · Automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE + PROJECTS -->
+<section class="sheet" id="experience">
+  <div class="sheet-index-tag mono">X-01 / EXPERIENCE</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">X-01</span>
+      <h2 class="display" data-en="Experience" data-ar="الخبرات">Experience</h2>
+      <span class="sheet-sub mono">REV 03</span>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-role" data-en="Electromechanical Engineer" data-ar="مهندس كهروميكانيكا">Electromechanical Engineer</span> — <span class="job-org">Arab Contractors</span></div>
+        <div class="job-date mono">SEPT 2025 — PRESENT</div>
+      </div>
+      <div style="color:var(--ink-dimmer); font-size:13px; margin-bottom:18px;" data-en="Monorail Project — Site &amp; Technical Office Engineer" data-ar="مشروع المونوريل — مهندس موقع ومكتب فني">Monorail Project — Site &amp; Technical Office Engineer</div>
+
+      <div class="job-group">
+        <div class="job-group-label mono" data-en="HVAC &amp; VENTILATION" data-ar="التكييف والتهوية">HVAC &amp; VENTILATION</div>
+        <ul class="tasks">
+          <li data-en="Supervised and executed installation of VRV, CRAC, DX AHU, and Package Unit systems." data-ar="أشرفت ونفذت تركيب أنظمة VRV وCRAC وDX AHU ووحدات Package.">Supervised and executed installation of VRV, CRAC, DX AHU, and Package Unit systems.</li>
+          <li data-en="Oversaw exhaust, fresh air, and smoke ventilation systems across monorail stations." data-ar="أشرفت على أنظمة الشفط والهواء النقي وتهوية الدخان في محطات المونوريل.">Oversaw exhaust, fresh air, and smoke ventilation systems across monorail stations.</li>
+          <li data-en="Performed quantity surveying and BOQ preparation for HVAC works." data-ar="نفذت حصر الكميات وإعداد الـ BOQ لأعمال التكييف.">Performed quantity surveying and BOQ preparation for HVAC works.</li>
+        </ul>
+      </div>
+      <div class="job-group">
+        <div class="job-group-label mono" data-en="FIREFIGHTING" data-ar="الحريق">FIREFIGHTING</div>
+        <ul class="tasks">
+          <li data-en="Supervised installation and handover of FM200 fire suppression systems at Stations 1, 3, 4, 6 &amp; 9." data-ar="أشرفت على تركيب وتسليم أنظمة إطفاء FM200 في المحطات 1 و3 و4 و6 و9.">Supervised installation and handover of FM200 fire suppression systems at Stations 1, 3, 4, 6 &amp; 9.</li>
+          <li data-en="Oversaw manual and automatic firefighting systems installation and commissioning." data-ar="أشرفت على تركيب وتشغيل أنظمة الحريق اليدوية والأوتوماتيك.">Oversaw manual and automatic firefighting systems installation and commissioning.</li>
+        </ul>
+      </div>
+      <div class="job-group">
+        <div class="job-group-label mono" data-en="FIRST-FIX &amp; ELECTRICAL" data-ar="التأسيس والكهرباء">FIRST-FIX &amp; ELECTRICAL</div>
+        <ul class="tasks">
+          <li data-en="Executed first-fix power cabling for all HVAC, ventilation, and firefighting systems." data-ar="نفذت تأسيس كابلات الطاقة لكل أنظمة التكييف والتهوية والحريق.">Executed first-fix power cabling for all HVAC, ventilation, and firefighting systems.</li>
+          <li data-en="Supervised BMS first-fix cabling across stations." data-ar="أشرفت على تأسيس كابلات BMS في المحطات.">Supervised BMS first-fix cabling across stations.</li>
+          <li data-en="Oversaw installation of steel conduits, cable trays, trunking, and flexible conduits." data-ar="أشرفت على تركيب الكوندويت الصلب وتراي الكابلات والترانكينج والكوندويت المرن.">Oversaw installation of steel conduits, cable trays, trunking, and flexible conduits.</li>
+        </ul>
+      </div>
+      <div class="job-group">
+        <div class="job-group-label mono" data-en="DUCTWORK &amp; PIPING" data-ar="الدكت والمواسير">DUCTWORK &amp; PIPING</div>
+        <ul class="tasks">
+          <li data-en="Supervised ductwork (sheet metal) fabrication and installation." data-ar="أشرفت على تصنيع وتركيب الدكت (الصاج).">Supervised ductwork (sheet metal) fabrication and installation.</li>
+          <li data-en="Oversaw copper pipework and water-related MEP works." data-ar="أشرفت على مواسير النحاس وأعمال MEP المتعلقة بالمياه.">Oversaw copper pipework and water-related MEP works.</li>
+        </ul>
+      </div>
+      <div class="job-group">
+        <div class="job-group-label mono" data-en="PROCUREMENT" data-ar="المشتريات">PROCUREMENT</div>
+        <ul class="tasks">
+          <li data-en="Raised purchase orders for pressurization fans used in smoke control/escape systems." data-ar="أصدرت أوامر شراء لمراوح الضغط المستخدمة في أنظمة التحكم بالدخان والهروب.">Raised purchase orders for pressurization fans used in smoke control/escape systems.</li>
+          <li data-en="Procured black sheet metal (ductwork), exhaust fans, and other MEP materials." data-ar="وفّرت الصاج الأسود (للدكت) ومراوح الشفط ومواد MEP أخرى.">Procured black sheet metal (ductwork), exhaust fans, and other MEP materials.</li>
+          <li data-en="Managed tenders and quotations for over 8 MEP project files." data-ar="أدرت المناقصات وعروض الأسعار لأكتر من 8 ملفات مشاريع MEP.">Managed tenders and quotations for over 8 MEP project files.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-role" data-en="Automation Engineer" data-ar="مهندس أوتوميشن">Automation Engineer</span> — <span class="job-org">SIAC</span></div>
+        <div class="job-date mono">MAR 2025 — MAY 2025</div>
+      </div>
+      <ul class="tasks">
+        <li data-en="Installed and tested PLC panels for sewage pump systems." data-ar="ركّبت واختبرت لوحات PLC لأنظمة طلمبات الصرف الصحي.">Installed and tested PLC panels for sewage pump systems.</li>
+        <li data-en="Integrated sensors and control panels at El-Manshiy Station." data-ar="دمجت الحساسات ولوحات التحكم في محطة المنشية.">Integrated sensors and control panels at El-Manshiy Station.</li>
+        <li data-en="Conducted field inspections at multiple water and wastewater sites." data-ar="نفذت معاينات ميدانية في مواقع مياه وصرف صحي متعددة.">Conducted field inspections at multiple water and wastewater sites.</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="sheet-head" style="margin-bottom:22px;">
+        <span class="sheet-code mono">X-02</span>
+        <h2 class="display" style="font-size:1.5rem;" data-en="Key Projects" data-ar="أهم المشاريع">Key Projects</h2>
+      </div>
+      <div class="proj">
+        <div class="proj-title" data-en="Monorail Stations — Arab Contractors" data-ar="محطات المونوريل — المقاولون العرب">Monorail Stations — Arab Contractors</div>
+        <div class="proj-desc" data-en="Full MEP supervision including VRV HVAC, smoke &amp; fresh air ventilation, FM200 firefighting, first-fix power &amp; BMS cabling across Stations 3, 4, 6 &amp; 9." data-ar="إشراف MEP كامل شامل تكييف VRV، وتهوية الدخان والهواء النقي، وإطفاء FM200، وتأسيس كابلات الطاقة وBMS في المحطات 3 و4 و6 و9.">Full MEP supervision including VRV HVAC, smoke &amp; fresh air ventilation, FM200 firefighting, first-fix power &amp; BMS cabling across Stations 3, 4, 6 &amp; 9.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-title" data-en="Pump Control Systems — SIAC" data-ar="أنظمة تحكم الطلمبات — SIAC">Pump Control Systems — SIAC</div>
+        <div class="proj-desc" data-en="Installed and commissioned PLC panels for sewage pump stations with full sensor integration." data-ar="ركّبت وشغّلت لوحات PLC لمحطات طلمبات الصرف الصحي مع تكامل كامل للحساسات.">Installed and commissioned PLC panels for sewage pump stations with full sensor integration.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-title" data-en="Water Monitoring via SCADA" data-ar="مراقبة المياه عبر SCADA">Water Monitoring via SCADA</div>
+        <div class="proj-desc" data-en="Designed a real-time monitoring system using Siemens PLC and SCADA for water quality and flow." data-ar="صممت نظام مراقبة لحظي باستخدام Siemens PLC وSCADA لجودة وتدفق المياه.">Designed a real-time monitoring system using Siemens PLC and SCADA for water quality and flow.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-title" data-en="Smart Fire Suppression Prototype" data-ar="نموذج إطفاء حريق ذكي">Smart Fire Suppression Prototype</div>
+        <div class="proj-desc" data-en="Arduino-based fire detection and suppression control system." data-ar="نظام كشف وإطفاء حريق قائم على Arduino.">Arduino-based fire detection and suppression control system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION / TRAINING -->
+<section class="sheet" id="education">
+  <div class="sheet-index-tag mono">G-02 / EDUCATION</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <span class="sheet-code mono">G-02</span>
+      <h2 class="display" data-en="Education &amp; Training" data-ar="التعليم والتدريب">Education &amp; Training</h2>
+      <span class="sheet-sub mono" data-en="SCALE N.T.S." data-ar="بدون مقياس">SCALE N.T.S.</span>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="job-group-label mono" style="margin-bottom:16px;" data-en="EDUCATION" data-ar="التعليم">EDUCATION</div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="B.Sc. Mechatronics, Robotics &amp; Automation Engineering" data-ar="بكالوريوس هندسة الميكاترونكس والروبوتات والأتمتة">B.Sc. Mechatronics, Robotics &amp; Automation Engineering</div>
+          <div class="edu-meta mono" data-en="MANSOURA UNIVERSITY — GRADUATED JAN 2025" data-ar="جامعة المنصورة — تخرج يناير 2025">MANSOURA UNIVERSITY — GRADUATED JAN 2025</div>
+        </div>
+
+        <div class="job-group-label mono" style="margin: 26px 0 16px;" data-en="COURSES" data-ar="الكورسات">COURSES</div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="Mechanical Design Course" data-ar="كورس التصميم الميكانيكي">Mechanical Design Course</div>
+          <div class="edu-meta mono" data-en="WITH ENG. ISLAM IBRAHIM — NOV 2025 – MAY 2026" data-ar="مع م. إسلام إبراهيم — نوفمبر 2025 – مايو 2026">WITH ENG. ISLAM IBRAHIM — NOV 2025 – MAY 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="Beit El-Mohandeseen Course" data-ar="كورس بيت المهندسين">Beit El-Mohandeseen Course</div>
+          <div class="edu-meta mono" data-en="FEB – APR 2025" data-ar="فبراير – أبريل 2025">FEB – APR 2025</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="PLC Advanced Course" data-ar="كورس PLC متقدم">PLC Advanced Course</div>
+          <div class="edu-meta mono" data-en="SEPT 2024" data-ar="سبتمبر 2024">SEPT 2024</div>
+        </div>
+
+        <div class="job-group-label mono" style="margin: 26px 0 16px;" data-en="LANGUAGES" data-ar="اللغات">LANGUAGES</div>
+        <div class="lang-row"><span data-en="Arabic" data-ar="العربية">Arabic</span><span data-en="Native" data-ar="لغة أم">Native</span></div>
+        <div class="lang-row"><span data-en="English" data-ar="الإنجليزية">English</span><span data-en="Proficient" data-ar="جيد جدًا">Proficient</span></div>
+      </div>
+
+      <div>
+        <div class="job-group-label mono" style="margin-bottom:16px;" data-en="TRAINING &amp; INTERNSHIPS" data-ar="التدريب والتدريبات الصيفية">TRAINING &amp; INTERNSHIPS</div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="Intern — Water Stations, Kom El Nour &amp; Mit Ghamr" data-ar="متدرب — محطات مياه، كوم النور وميت غمر">Intern — Water Stations, Kom El Nour &amp; Mit Ghamr</div>
+          <div class="edu-meta mono" data-en="JUL – AUG 2024" data-ar="يوليو – أغسطس 2024">JUL – AUG 2024</div>
+          <div style="color:var(--ink-dim); font-size:13.5px; margin-top:6px;" data-en="Supported PLC and SCADA-based automation tasks; calibrated sensors and automated valve control systems." data-ar="دعمت مهام الأتمتة بـ PLC وSCADA؛ عايرت الحساسات وأنظمة التحكم الأوتوماتيكي في الصمامات.">Supported PLC and SCADA-based automation tasks; calibrated sensors and automated valve control systems.</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="Intern — Electromechanical, Arab Contractors" data-ar="متدرب — كهروميكانيكا، المقاولون العرب">Intern — Electromechanical, Arab Contractors</div>
+          <div class="edu-meta mono" data-en="JUL – AUG 2023" data-ar="يوليو – أغسطس 2023">JUL – AUG 2023</div>
+          <div style="color:var(--ink-dim); font-size:13.5px; margin-top:6px;" data-en="Participated in the installation of firefighting and medical gas systems during construction of medical facilities; assisted with piping installation, equipment setup, and site inspections." data-ar="شاركت في تركيب أنظمة الحريق والغازات الطبية أثناء إنشاء منشآت طبية؛ ساعدت في تركيب المواسير وتجهيز المعدات ومعاينات الموقع.">Participated in the installation of firefighting and medical gas systems during construction of medical facilities; assisted with piping installation, equipment setup, and site inspections.</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree" data-en="Intern — AI &amp; Automation, DTC, Mansoura University" data-ar="متدرب — الذكاء الاصطناعي والأتمتة، DTC، جامعة المنصورة">Intern — AI &amp; Automation, DTC, Mansoura University</div>
+          <div class="edu-meta mono" data-en="SEP 2022 – SEP 2023" data-ar="سبتمبر 2022 – سبتمبر 2023">SEP 2022 – SEP 2023</div>
+          <div style="color:var(--ink-dim); font-size:13.5px; margin-top:6px;" data-en="Participated in AI training and chatbot development workshops." data-ar="شاركت في ورش تدريب على الذكاء الاصطناعي وتطوير الشات بوت.">Participated in AI training and chatbot development workshops.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / TITLE BLOCK FOOTER -->
+<footer class="sheet" id="contact">
+  <div class="sheet-index-tag mono">G-99 / CONTACT</div>
+  <div class="reg-tl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-tr"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-bl"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+  <div class="reg-br"><svg viewBox="0 0 22 22"><path d="M11 0V22M0 11H22" stroke="#4A6690" stroke-width="1"/></svg></div>
+
+  <div class="sheet-inner">
+    <div class="footer-cta">
+      <h2 class="display" data-en="Get In Touch" data-ar="تواصل معايا">Get In Touch</h2>
+      <p data-en="Open to MEP site &amp; technical office opportunities across HVAC, firefighting and automation." data-ar="متاح لفرص عمل في مواقع وأعمال مكاتب MEP الفنية في التكييف والحريق والأوتوميشن.">Open to MEP site &amp; technical office opportunities across HVAC, firefighting and automation.</p>
+      <div class="footer-links mono">
+        <a href="mailto:osama.a.a.sheriff@gmail.com" data-en="EMAIL" data-ar="إيميل">EMAIL</a>
+        <a href="tel:+201554436752" data-en="CALL" data-ar="اتصال">CALL</a>
+        <a href="https://wa.me/201554436752" target="_blank" rel="noopener">WHATSAPP</a>
+        <a href="https://linkedin.com/in/0s17" target="_blank" rel="noopener">LINKEDIN</a>
+      </div>
+    </div>
+
+    <div class="title-block mono">
+      <div class="tb-cell">
+        <div class="tb-label" data-en="DRAWING NO." data-ar="رقم الرسمة">DRAWING NO.</div>
+        <div class="tb-value">OS-CV-2026</div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label" data-en="REV" data-ar="مراجعة">REV</div>
+        <div class="tb-value">03</div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label" data-en="DATE" data-ar="التاريخ">DATE</div>
+        <div class="tb-value">JUL 2026</div>
+      </div>
+      <div class="tb-cell">
+        <div class="tb-label" data-en="STATUS" data-ar="الحالة">STATUS</div>
+        <div class="tb-value" style="color:var(--cyan);" data-en="FOR REVIEW" data-ar="للمراجعة">FOR REVIEW</div>
+      </div>
+      <div class="tb-cell wide">
+        <div class="tb-label" data-en="PREPARED BY" data-ar="إعداد">PREPARED BY</div>
+        <div class="tb-value" data-en="Osama Sheriff — MEP Engineer" data-ar="أسامة شريف — مهندس MEP">Osama Sheriff — MEP Engineer</div>
+      </div>
+      <div class="tb-cell wide">
+        <div class="tb-label" data-en="DISCIPLINE" data-ar="التخصص">DISCIPLINE</div>
+        <div class="tb-value" data-en="Mechanical / Fire Protection / Electrical / Automation" data-ar="ميكانيكا / حماية من الحريق / كهرباء / أوتوميشن">Mechanical / Fire Protection / Electrical / Automation</div>
+      </div>
+    </div>
+
+    <div class="rev-note mono" data-en="END OF DRAWING SET — SHEET G-99 OF G-99" data-ar="نهاية مجموعة الرسومات — لوحة G-99 من G-99">END OF DRAWING SET — SHEET G-99 OF G-99</div>
+  </div>
+</footer>
+
+<!-- QUICK CONTACT CHAT WIDGET -->
+<button class="chat-fab" id="chatFab" aria-label="Open quick contact chat">
+  <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="#0A1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="#0A1F3A" stroke-width="2" stroke-linecap="round">
+    <path d="M18 6 6 18M6 6l12 12"/>
+  </svg>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <span class="dot"></span>
+    <div>
+      <div class="chat-head-title" data-en="Quick Contact" data-ar="تواصل سريع">Quick Contact</div>
+      <div class="chat-head-sub mono" data-en="usually replies within a day" data-ar="بيرد عادة خلال يوم">usually replies within a day</div>
+    </div>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot" data-en="Hi, I'm Osama's contact assistant. Ask about his experience, or tap a quick action below." data-ar="أهلًا، أنا مساعد التواصل بتاع أسامة. اسأل عن خبرته، أو دوس على أي زرار سريع تحت.">Hi, I'm Osama's contact assistant. Ask about his experience, or tap a quick action below.</div>
+  </div>
+  <div class="chat-quick">
+    <button class="chat-chip" data-q="hvac" data-en="HVAC experience" data-ar="خبرة التكييف">HVAC experience</button>
+    <button class="chat-chip" data-q="fire" data-en="Firefighting / FM200" data-ar="حريق / FM200">Firefighting / FM200</button>
+    <button class="chat-chip" data-q="automation" data-en="PLC / SCADA" data-ar="PLC / SCADA">PLC / SCADA</button>
+    <button class="chat-chip" data-q="contact" data-en="How to reach him" data-ar="طريقة التواصل معاه">How to reach him</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Type a question…" autocomplete="off">
+    <button id="chatSend" data-en="SEND" data-ar="إرسال">SEND</button>
+  </div>
+</div>
+
+<script>
+  /* ---------- mobile nav toggle ---------- */
+  (function(){
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    if(navToggle && navMobile){
+      navToggle.addEventListener('click', function(){
+        const isOpen = navMobile.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navMobile.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navMobile.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
+
+  /* ---------- visit counter ---------- */
+  (function(){
+    const el = document.getElementById('visit-count');
+    if(!el) return;
+    const key = 'osama_sheriff_mep_portfolio_visits_v1';
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/' + key)
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data && data.value !== undefined){
+          el.textContent = String(data.value).padStart(4, '0');
+        } else {
+          throw new Error('no value');
+        }
+      })
+      .catch(function(){
+        // fallback: local, per-browser tally so the badge still shows something
+        try{
+          const local = parseInt(localStorage.getItem(key) || '0', 10) + 1;
+          localStorage.setItem(key, local);
+          el.textContent = String(local).padStart(4, '0');
+        }catch(e){ el.textContent = '—'; }
+      });
+  })();
+
+  /* ---------- quick contact chat ---------- */
+  (function(){
+    const fab = document.getElementById('chatFab');
+    const panel = document.getElementById('chatPanel');
+    const body = document.getElementById('chatBody');
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+
+    const RESPONSES = {
+      hvac: "He works across VRV/VRF, DX AHU, CRAC and package units, plus exhaust, fresh-air and smoke control ventilation — most recently on the Monorail stations project.",
+      fire: "He's supervised FM200 clean-agent suppression handover at five monorail stations, along with manual and automatic firefighting system commissioning.",
+      automation: "Background in PLC (Siemens, Mitsubishi, LS) and SCADA/WinCC/TIA Portal, including sewage pump control systems and real-time water monitoring.",
+      contact: "Best ways to reach him: email osama.a.a.sheriff@gmail.com, WhatsApp/call +20 155 443 6752, or connect on LinkedIn (/in/0s17)."
+    };
+
+    function toggle(){
+      const open = panel.classList.toggle('open');
+      fab.classList.toggle('open', open);
+      if(open) input.focus();
+    }
+    fab.addEventListener('click', toggle);
+
+    function addMsg(text, who){
+      const div = document.createElement('div');
+      div.className = 'chat-msg ' + who;
+      div.textContent = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function getReply(raw){
+      const q = raw.toLowerCase();
+      if(/hvac|vrv|vrf|ahu|crac|vent/.test(q)) return RESPONSES.hvac;
+      if(/fire|fm200|suppress/.test(q)) return RESPONSES.fire;
+      if(/plc|scada|automat|control|wincc|tia portal/.test(q)) return RESPONSES.automation;
+      if(/experience|years|background|career/.test(q)) return "He's an MEP engineer currently with Arab Contractors on the Monorail project, with prior automation work at SIAC and site internships before that.";
+      if(/location|where|based|egypt|city/.test(q)) return "He's based in 6th October, Giza, Egypt.";
+      if(/contact|reach|email|phone|whatsapp|call|number|linkedin/.test(q)) return RESPONSES.contact;
+      return "That's a bit specific for me to answer — I'm just a simple assistant. Best to ask Osama directly: email osama.a.a.sheriff@gmail.com or WhatsApp +20 155 443 6752.";
+    }
+
+    document.querySelectorAll('.chat-chip').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        addMsg(btn.textContent, 'user');
+        setTimeout(function(){ addMsg(RESPONSES[btn.dataset.q], 'bot'); }, 200);
+      });
+    });
+
+    function send(){
+      const val = input.value.trim();
+      if(!val) return;
+      addMsg(val, 'user');
+      input.value = '';
+      setTimeout(function(){ addMsg(getReply(val), 'bot'); }, 250);
+    }
+  /* ---------- theme toggle (blueprint / whiteprint) ---------- */
+  (function(){
+    const toggle = document.getElementById('themeToggle');
+    if(!toggle) return;
+    const sunIcon = toggle.querySelector('.icon-sun');
+    const moonIcon = toggle.querySelector('.icon-moon');
+    const root = document.documentElement;
+
+    function apply(theme){
+      if(theme === 'light'){
+        root.setAttribute('data-theme', 'light');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        root.removeAttribute('data-theme');
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+      try{ localStorage.setItem('site_theme', theme); }catch(e){}
+    }
+
+    let saved = 'dark';
+    try{ saved = localStorage.getItem('site_theme') || 'dark'; }catch(e){}
+    apply(saved);
+
+    toggle.addEventListener('click', function(){
+      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      apply(current === 'light' ? 'dark' : 'light');
+    });
+  })();
+
+  /* ---------- language toggle (EN / AR) ---------- */
+  (function(){
+    const toggle = document.getElementById('langToggle');
+    if(!toggle) return;
+    const root = document.documentElement;
+    const nodes = document.querySelectorAll('[data-en]');
+
+    function apply(lang){
+      root.lang = lang;
+      root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      nodes.forEach(function(el){
+        const val = lang === 'ar' ? el.dataset.ar : el.dataset.en;
+        if(val !== undefined) el.textContent = val;
+      });
+      try{ localStorage.setItem('site_lang', lang); }catch(e){}
+    }
+
+    let saved = 'en';
+    try{ saved = localStorage.getItem('site_lang') || 'en'; }catch(e){}
+    apply(saved);
+
+    toggle.addEventListener('click', function(){
+      const current = root.dir === 'rtl' ? 'ar' : 'en';
+      apply(current === 'ar' ? 'en' : 'ar');
+    });
+  })();
+
+  /* ---------- scroll reveal ---------- */
+  (function(){
+    const targets = document.querySelectorAll('.sheet');
+    if(!('IntersectionObserver' in window)){
+      targets.forEach(function(t){ t.classList.add('is-visible'); });
+      return;
+    }
+    targets.forEach(function(t){ t.classList.add('reveal'); });
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(function(t){ io.observe(t); });
+  })();
+</script>
+
+</body>
+</html>
