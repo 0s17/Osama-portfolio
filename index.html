@@ -1193,6 +1193,10 @@
       input.value = '';
       setTimeout(function(){ addMsg(getReply(val), 'bot'); }, 250);
     }
+    sendBtn.addEventListener('click', send);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter') send(); });
+  })();
+
   /* ---------- theme toggle (blueprint / whiteprint) ---------- */
   (function(){
     const toggle = document.getElementById('themeToggle');
